@@ -1,6 +1,7 @@
 import express from 'express';
 //const express = require('express');
 import notesRoters from './routes/notesRotes.js';
+import { connectDB } from './config/db.js';
 
 const app = express();
 
