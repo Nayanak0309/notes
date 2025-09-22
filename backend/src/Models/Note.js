@@ -11,3 +11,6 @@ import mongoose from "mongoose";
  }, 
     { timestamps: true }
 );      
+
+const Note=mongoose.model("Note",notesSchema);
+export default Note;

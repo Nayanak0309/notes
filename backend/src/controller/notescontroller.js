@@ -1,9 +1,10 @@
-import Note from '../Models/Note.js';
+import Note from "../Models/Note.js";
 export async function getAllNotes(req, res) {
   try {
     const notes = await Note.find();
     res.status(200).json(notes);
   } catch (error) {
+    console.error("Error retrieving notes:", error);
     res.status(500).json({ message: "Error retrieving notes", error });
   }
 }
