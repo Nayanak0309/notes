@@ -15,6 +15,14 @@ const app = express();
 
 await connectDB();
 
+//middleware connection
+app.use(express.json());
+
+app.use((req,res,next) => {
+  console.log('Req method is ${req.method} & Req URL is ${req.url}');
+  next();
+});
+
 app.use("/api/notes",notesRoters);
 
 app.listen(PORT, () => {
